@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import os
 from io import BytesIO
-import openpyxl
 import time
 
 # Set up App
@@ -81,7 +80,7 @@ if uploaded_files:
             mime_type = "text/csv"
 
          elif conversion_type == "Excel":
-            with pd.ExcelWriter(buffer, engine="openpyxl") as writer:
+            with pd.ExcelWriter(buffer) as writer:
                df.to_excel(writer, index=False)
                file_name = file.name.replace(file_ext, "xlsx")
                mime_type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
