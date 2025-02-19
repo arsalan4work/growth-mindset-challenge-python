@@ -6,8 +6,7 @@ readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
     "streamlit",
-    "pandas",
-    "openpyxl"
+    "pandas"
 ]
 
 [build-system]
